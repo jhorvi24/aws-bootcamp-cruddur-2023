@@ -21,7 +21,7 @@ The unzip create a directory named AWS. In this directory I install AWS CLI with
 sudo ./aws/install
 ```
 I have to install AWS CLI whenever I start Gitpod so I edit the yaml file to install always the packages when I initiate gitpod again. I edit this file with:
-```
+
 tasks:
   - name: aws-cli
     env:
@@ -32,7 +32,8 @@ tasks:
       unzip awscliv2.zip
       sudo ./aws/install
       cd $THEIA_WORKSPACE_ROOT
-      ```
+      
+**A image like a prove**
 
 ##Create a new user.
 I login in AWS console like root but it is good practice work with other user by then I create a IAM user with administrator rights and login with this user. 
@@ -48,12 +49,12 @@ I created a billing alarm using AWS SNS from AWS CLI using gitpod. Firs I create
 aws sns create-topic --name billing-alarm
 ```
 After I suscrib to the topic con mi email using the next command:
-```
+
 aws sns subscribe \
     --topic-arn TopicARN \
     --protocol email \
     --notification-endpoint my@email.com
-    ```
+ 
     
 I finally created the alarm using the next command:
   ```
