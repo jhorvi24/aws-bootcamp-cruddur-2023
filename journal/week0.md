@@ -22,6 +22,7 @@ sudo ./aws/install
 ```
 I have to install AWS CLI whenever I start Gitpod so I edit the yaml file to install always the packages when I initiate gitpod again. I edit this file with:
 
+```sh
 tasks:
   - name: aws-cli
     env:
@@ -32,6 +33,7 @@ tasks:
       unzip awscliv2.zip
       sudo ./aws/install
       cd $THEIA_WORKSPACE_ROOT
+``` 
       
 **A image like a prove**
 
@@ -40,6 +42,8 @@ I login in AWS console like root but it is good practice work with other user by
 
 ##Work with AWS CLI
 I set the Env Vars using Gitpod and check it with the command: "aws sts get-caller-identity
+
+**A image like a prove**
 
 ##AWS Budget and Billing Alarm
 Firs I create a directory named AWS2 because the environment hava a directory with the name AWS. In AWS2 I created other directory name **json** and here I create 3 json files necesary for configure the alarm andd budget. 
@@ -50,10 +54,12 @@ aws sns create-topic --name billing-alarm
 ```
 After I suscrib to the topic con mi email using the next command:
 
+```sh
 aws sns subscribe \
     --topic-arn TopicARN \
     --protocol email \
     --notification-endpoint my@email.com
+```
  
     
 I finally created the alarm using the next command:
@@ -62,9 +68,12 @@ I finally created the alarm using the next command:
   ```
   
 After I create the budget with the next command:
-```
+
+```sh
 aws budgets create-budget \
     --account-id AccountID \
     --budget file://aws/json/budget.json \
     --notifications-with-subscribers file://aws/json/budget-notifications-with-subscribers.json
-    ```
+```
+**A image like a prove**
+    
