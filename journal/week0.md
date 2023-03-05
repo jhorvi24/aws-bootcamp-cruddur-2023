@@ -1,6 +1,6 @@
 # Week 0 — Billing and Architecture
 
-##Install AWS CLI
+## Install AWS CLI
 I install AWS CLI using Gitpod. 
 
 In Gitpod I write the commando for change the directory:
@@ -37,15 +37,15 @@ tasks:
       
 **A image like a prove**
 
-##Create a new user.
+## Create a new user.
 I login in AWS console like root but it is good practice work with other user by then I create a IAM user with administrator rights and login with this user. 
 
-##Work with AWS CLI
+## Work with AWS CLI
 I set the Env Vars using Gitpod and check it with the command: "aws sts get-caller-identity
 
 **A image like a prove**
 
-##AWS Budget and Billing Alarm
+## AWS Budget and Billing Alarm
 Firs I create a directory named AWS2 because the environment hava a directory with the name AWS. In AWS2 I created other directory name **json** and here I create 3 json files necesary for configure the alarm andd budget. 
 
 I created a billing alarm using AWS SNS from AWS CLI using gitpod. Firs I create a Topic named billing-alarm with the next command:
