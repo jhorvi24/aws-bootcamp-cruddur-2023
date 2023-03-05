@@ -35,15 +35,16 @@ tasks:
       cd $THEIA_WORKSPACE_ROOT
 ``` 
       
-**A image like a prove**
+![Checking AWS CLI](assets/AWSCLI.JPG)
 
 ## Create a new user.
 I login in AWS console like root but it is good practice work with other user by then I create a IAM user with administrator rights and login with this user. 
 
 ## Work with AWS CLI
-I set the Env Vars using Gitpod and check it with the command: "aws sts get-caller-identity
+I set the Env Vars using Gitpod and check it with the command: ```aws sts get-caller-identity```
 
-**A image like a prove**
+![Checking AWS Identity](assets/awsID.JPG)
+
 
 ## AWS Budget and Billing Alarm
 Firs I create a directory named AWS2 because the environment hava a directory with the name AWS. In AWS2 I created other directory name **json** and here I create 3 json files necesary for configure the alarm andd budget. 
@@ -60,7 +61,8 @@ aws sns subscribe \
     --protocol email \
     --notification-endpoint my@email.com
 ```
- 
+I checked the configuration in AWS console:
+![AWS SNS](assets/sns.png) 
     
 I finally created the alarm using the next command:
   ```
@@ -75,5 +77,10 @@ aws budgets create-budget \
     --budget file://aws/json/budget.json \
     --notifications-with-subscribers file://aws/json/budget-notifications-with-subscribers.json
 ```
-**A image like a prove**
+![Checking AWS Budget](assets/budget.JPG)
+
+## ARCHITECTURE
+Finally I designed the architecture using the software [**LucidChart**](https://www.lucidchart.com/)
+
+![architecture](assets/architecture.png)
     
