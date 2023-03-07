@@ -146,3 +146,25 @@ networks:
     driver: bridge
     name: cruddur
 ```
+I create the notifications parte follow the steps suplied by Andrew Brown in the next video: [Notifications Configurations](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27)
+
+
+**IMAGE FOR NOTIFICATIONS PART**
+
+Finally I add DynamoDB and Postgresql to Docker Compose file adding the next lines
+```
+services:
+  db:
+    image: postgres:13-alpine
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
+volumes:
+  db:
+    driver: local
+```
