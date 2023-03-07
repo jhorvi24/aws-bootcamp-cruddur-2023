@@ -62,6 +62,8 @@ I run the application with the next command:
 
 ![Checking backend](assets/week1img/backend.JPG)
 
+## Docker Frontend
+
 Now I create other docker file but inside the frontend-react directory. Before create the docker files is necessary install nodejs package inside the frontend-react directory with the next comamand: 
 ```
 npm i
@@ -91,6 +93,8 @@ docker run -p 3000:3000 -d frontend-react-js
 ```
 
 ![Checking frontend](assets/week1img/frontend.JPG)
+
+## Docker Compose
 
 Finally I create a docker compose using a yml file where I can have the two container: backend docker and frontend docker. This file have the next lines:
 
@@ -148,10 +152,14 @@ networks:
     driver: bridge
     name: cruddur
 ```
+
+## Notifications Configuration
 I create the notifications parte follow the steps suplied by Andrew Brown in the next video: [Notifications Configurations](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27)
 
 
 ![Checking notifications](assets/week1img/notifications.JPG)
+
+## Add DynanoDB and Postgresql to Docker Compose
 
 Finally I add DynamoDB and Postgresql to Docker Compose file adding the next lines
 ```
