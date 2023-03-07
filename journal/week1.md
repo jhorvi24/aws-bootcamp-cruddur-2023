@@ -4,6 +4,8 @@
 
 I check if docker is installed in Gitpod using the command ```docker --version```
 
+![Checking docker](assets/week1img/docker.JPG)
+
 Inside the backend-flask directory I created a file named DockerFile with the next lines:
 
 ```sh
@@ -41,7 +43,7 @@ I install some libraries for python using the requirements.txt file. Before I ru
     export FRONTEND_URL="*"
     export BACKEND_URL="*"
 ```
-***IMAGE ABOUR ENV VARS**
+
 
 
 I build the docker with the next command: 
@@ -58,7 +60,7 @@ I run the application with the next command:
 
 ``` python3 -m flask run --host=0.0.0.0 --port=4567 ```
 
-***IMAGE ABOUT APPLICATION RUN
+![Checking backend](assets/week1img/backend.JPG)
 
 Now I create other docker file but inside the frontend-react directory. Before create the docker files is necessary install nodejs package inside the frontend-react directory with the next comamand: 
 ```
@@ -88,7 +90,7 @@ And run the docker with the next command:
 docker run -p 3000:3000 -d frontend-react-js
 ```
 
-**IMAGE ABOUT THE WEB PAGE IN 3000 PORT**
+![Checking frontend](assets/week1img/frontend.JPG)
 
 Finally I create a docker compose using a yml file where I can have the two container: backend docker and frontend docker. This file have the next lines:
 
@@ -149,7 +151,7 @@ networks:
 I create the notifications parte follow the steps suplied by Andrew Brown in the next video: [Notifications Configurations](https://www.youtube.com/watch?v=k-_o0cCpksk&list=PLBfufR7vyJJ7k25byhRXJldB5AiwgNnWv&index=27)
 
 
-**IMAGE FOR NOTIFICATIONS PART**
+![Checking notifications](assets/week1img/notifications.JPG)
 
 Finally I add DynamoDB and Postgresql to Docker Compose file adding the next lines
 ```
