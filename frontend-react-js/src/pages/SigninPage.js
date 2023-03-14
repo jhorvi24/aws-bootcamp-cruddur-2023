@@ -13,27 +13,20 @@ export default function SigninPage() {
   const [errors, setErrors] = React.useState('');
 
   const onsubmit = async (event) => {
-    event.preventDefault();
     setErrors('')
-    try {
-        const { user } = await Auth.signUp({
-          username: email,
-          password: password,
-          attributes: {
-              name: name,
-              email: email,
-              preferred_username: username,
-          },
-          autoSignIn: { // optional - enables auto sign in after user is confirmed
-              enabled: true,
-          }
-        });
-        console.log(user);
-        window.location.href = `/confirm?email=${email}`
-    } catch (error) {
-        console.log(error);
-        setErrors(error.message)
-    }
+    event.preventDefault();
+    Auth.signIn(email, password)
+    .then(user => {
+      console.log('user',user)
+      localStorage.setItem("access_token", user.signInUserSession.accessToken.jwtToken)
+      window.location.href = "/"
+    })
+    .catch(error => { 
+      if (error.code == 'UserNotConfirmedException') {
+        window.location.href = "/confirm"
+      }
+      setErrors(error.message)
+    });
     return false
   }
 
